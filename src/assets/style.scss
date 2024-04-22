@@ -1,0 +1,126 @@
+$fontfamily: 100% Helvetica, sans-serif;
+$primaryfontcolor: #68595E;
+$primaryfontsize: small;
+$secondfontsize: medium;
+$thirdfontsize: x-large;
+$primarybackgroundcolor: #E4E0D4;
+$secondbackgroundcolor: #f2f0ea;
+$thirdbackgroundcolor: #f9f8f7;
+$fourthbackgroundcolor: #c9c4b6;
+$border: 1px solid #99958a;
+@mixin button {
+  background: $fourthbackgroundcolor;
+  color: $primaryfontcolor;
+  border: $border;
+  cursor: pointer;
+  &:hover {
+    background-color: $thirdbackgroundcolor;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  }
+}
+@mixin form {
+    background: $thirdbackgroundcolor;
+    color: $primaryfontcolor;
+    font-family: $fontfamily;
+    border: $border;
+    width: 250px;
+    height: 20px;
+  }
+
+
+
+body {
+    font: $fontfamily;
+    font-size: $primaryfontsize;
+    color: $primaryfontcolor;
+    background-color: $primarybackgroundcolor;
+    
+  }
+  .logo {
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .body1{
+    background-color: $secondbackgroundcolor;
+    width: 100%;
+  }
+  
+  .box{
+    padding: 10px;
+    
+  }
+  
+  .headline1 > * {
+    flex-basis: 100%;
+  }
+
+  .headline1{
+    display: inline-block;
+    width: 80%;
+  }
+
+  .headline2 > * {
+    flex-basis: 100%;
+  }
+
+  .headline2{
+    display: inline-block;
+    width: 20%;
+  }
+  
+  .product{
+    height: 35px;
+  }
+  
+  .price{
+    height: 35px;
+    
+  }
+  
+  .deletebutton{
+    display: inline;
+  }
+  
+  h1 {
+    font-size: $thirdfontsize;
+  }
+  
+  h2{
+    font-size: $secondfontsize;
+  }
+  
+  .hr1 {
+    border-top: $border;
+  }
+
+  .submitbutton {
+    @include button;
+    width: 100px;
+    height: 30px;
+  }
+
+  .deletebutton {
+    @include button;
+    width: 50px;
+    margin-right: 10px;
+  }
+
+  .inputfield{
+    @include form;
+  }
+
+
+  @media screen and (min-width: 1200px) {
+
+    .headline1{
+        display: inline-block;
+        width: 50%;
+      }
+
+    .headline2{
+        display: inline-block;
+        width: 50%;
+      }
+  }
